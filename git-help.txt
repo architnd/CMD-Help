@@ -30,8 +30,19 @@ git clone git@github.com:architnd/CMD-Help.git
 
 How to commit changes:
 
+First reviev the changes using:
+git diff
+
+Add changes to staging area:
 git add -A
+
+Commit changes to local repository:
 git commit
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+How to check the git log:
+git log
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
