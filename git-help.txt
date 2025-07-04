@@ -1,13 +1,43 @@
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-How to clone github repo:
+How to configure SSH key for github repo:
 
-git clone https://github.com/architnd/CMD-Help
+ssh-keygen -t rsa -b 4096 -C "architnd@gmail.com"
+It will generate rsa key pair in .ssh directory, It contains following two files:
+id_rsa - private key
+id_rsa.pub - public key
+
+Now, we program public key github account
+cat ~/.ssh/id_rsa.pub
+Then copy the key and go to:
+GitHub → Settings → SSH and GPG keys → New SSH key
+Paste the key and save.
+
+Create such file:
+cat .ssh/config 
+Host github.com
+  HostName github.com
+  User architnd
+  IdentityFile ~/.ssh/id_rsa
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+How to clone github repo:
 
+git clone git@github.com:architnd/CMD-Help.git
 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+How to commit changes:
+
+git add -A
+git commit
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+How to push changes to remote repository:
+
+git push -u origin main
 
 
 
