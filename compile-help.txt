@@ -1,0 +1,9 @@
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+How to compile for raspberry pi:
+~/buildroot/output/host/bin/arm-buildroot-linux-gnueabihf-g++ test.cpp
+
+Check  type of executable generated:
+file a.out
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>

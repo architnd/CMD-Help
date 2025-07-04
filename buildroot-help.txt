@@ -1,0 +1,43 @@
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+First Fork upstream buildroot repository to my github account
+
+Now clone the repo:
+git clone git@github.com:architnd/buildroot.git
+
+cd buildroot/
+
+checkout lts branch:
+git checkout 2024.02.x
+
+Create project branch:
+git checkout -b rtls
+
+Push new branch to remote repository:
+git push -u origin rtls
+
+Now, make a copy of raspberry pi configuration:
+cp configs/raspberrypi3_defconfig configs/raspberrypi3_rtls_defconfig
+this file contains buildroot build configuration
+
+Run make with the new configuration:
+make raspberrypi3_rtls_defconfig
+This will generate .config
+
+Note that dl directory contains al downloaded packages
+
+build buildroot:
+make
+It will generate images in following directory:
+output/images/
+
+check if sd card is already mounted, if it is mounted unmount it:
+mount
+umount /media/archit/*
+
+flash sd card image to sd card:
+sudo dd if=output/images/sdcard.img of=/dev/sdb bs=4M status=progress
+sync
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>

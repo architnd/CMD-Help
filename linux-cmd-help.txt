@@ -1,0 +1,19 @@
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Linux network commands:
+
+how to check what network interfaces are present:
+ifconfig -a
+
+Note: whenever we connect ethernet cable, host sends dhcp request to the router, and router sends dhcp response assigning ip address to the host
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+How to login to another linux host:
+ssh root@192.168.1.16
+
+How to copy files to another linux host:
+scp a.out root@192.168.1.16:.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>

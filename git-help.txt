@@ -44,12 +44,29 @@ git commit
 How to check the git log:
 git log
 
+How to see changes done by given commit:
+git show a208f702ae68303a5fe9d8236aebe5596ad50b3e
+
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 How to push changes to remote repository:
 
 git push -u origin main
 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+How to rename files in git:
+git mv buildrooot-help.txt buildroot-help.txt
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+How to create a new branch:
+git checkout -b rtls
+
+How to check difference between 2 branches:
+git diff rtls..master 
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 
 
