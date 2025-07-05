@@ -38,6 +38,62 @@ umount /media/archit/*
 flash sd card image to sd card:
 sudo dd if=output/images/sdcard.img of=/dev/sdb bs=4M status=progress
 sync
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+How to enable ssh to raspberry pi:
+Add following line to raspberrypi3_rtls_defconfig:
+BR2_PACKAGE_OPENSSH=y
+
+How to enable root login over ssh:
+Change following line in /etc/ssh/sshd_config:
+PermitRootLogin yes
+
+Set Root password:
+passwd
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+How to enable wifi support:
+Add following lines to raspberrypi3_rtls_defconfig to compile wifi driver(brcmfmac):
+BR2_PACKAGE_BRCMFMAC_SDIO_FIRMWARE_RPI=y
+BR2_PACKAGE_BRCMFMAC_SDIO_FIRMWARE_RPI_WIFI=y
+
+Add following lines to raspberrypi3_rtls_defconfig to compile wpa_supplicant and its utilities(like wpa_cli):
+BR2_PACKAGE_WPA_SUPPLICANT=y
+BR2_PACKAGE_WPA_SUPPLICANT_AUTOSCAN=y
+BR2_PACKAGE_WPA_SUPPLICANT_CLI=y
+BR2_PACKAGE_WPA_SUPPLICANT_WPA_CLIENT_SO=y
+BR2_PACKAGE_WPA_SUPPLICANT_PASSPHRASE=y
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+How to configure wifi:
+
+First load wifi driver as follows:
+modprobe brcmfmac
+Check if wlan0 interface is created as follows:
+ifconfig -a
+
+Update /etc/wpa_supplicant to:
+ctrl_interface=/var/run/wpa_supplicant
+ap_scan=1
+country=IN
+
+network={
+    ssid="Airtel_9850990060"
+    psk="air62568"
+}
+
+Start wpa supplicant as follows:
+wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant.conf
+
+Start dhcp client for wlan0 interface:
+udhcpc -i wlan0
+
+Check if the network is up by running following commands:
+ifconfig -a
+ping www.google.com
 
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+

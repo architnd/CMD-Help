@@ -16,4 +16,26 @@ How to copy files to another linux host:
 scp a.out root@192.168.1.16:.
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+How to check what processes are running in  linux:
+ps -aef
+
+How to see page by page:
+ps -aef | less
+
+How to filter output  of linux command:
+ps -aef | grep udhcp
+This will check if udhcpc process is running
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Kernel Rekated Commands:
+
+How to check which linux kernel version is running:
+uname -a
+
+How to check which kernel modules are loaded:
+lsmod
+
+Location of kernel and kernel modules on the file system:
+ls /lib/modules/6.1.61-v7/
+
